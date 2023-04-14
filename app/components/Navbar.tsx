@@ -10,7 +10,7 @@ export default function Navbar() {
     setActive(!state)
   }
   return (
-    <nav className="px-9 select-none">
+    <nav className="px-9 select-none pb-5 border-b border-primary/10">
       <ul className="flex justify-between">
         <li>
           <a href="#">Explorar</a>
