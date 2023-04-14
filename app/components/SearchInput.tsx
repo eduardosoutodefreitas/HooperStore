@@ -5,7 +5,7 @@ export default function SearchInput() {
     <form className="flex items-center">
       <input
         type="type"
-        className="px-7 py-3 border border-lightGray rounded-3xl shadow-sm outline-none focus:border-primary placeholder:text-sm placeholder:font-light "
+        className="px-7 py-3 w-[350px] border border-lightGray rounded-3xl shadow-sm outline-none focus:border-primary placeholder:text-sm placeholder:font-light "
         placeholder="Procure um produto ou Categoria "
       />
       <button className="-ml-12">
