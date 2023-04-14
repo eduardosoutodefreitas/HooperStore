@@ -1,4 +1,4 @@
-import { Poppins, Cormorant_Garamond } from 'next/font/google'
+import { Poppins, Gloock } from 'next/font/google'
 import Header from './components/Header'
 
 // Styles
@@ -16,11 +16,11 @@ const poppins = Poppins({
   variable: '--font-poppins'
 })
 
-const cormorant_garamond = Cormorant_Garamond({
+const gloock = Gloock({
   subsets: ['latin'],
   display: 'swap',
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-cormorant-garamond'
+  weight: ['400'],
+  variable: '--font-gloock'
 })
 
 export default function RootLayout({
@@ -29,9 +29,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="en"
-      className={`${poppins.variable} ${cormorant_garamond.variable}`}>
+    <html lang="en" className={`${poppins.variable} ${gloock.variable}`}>
       <body>
         <Header />
         {children}
