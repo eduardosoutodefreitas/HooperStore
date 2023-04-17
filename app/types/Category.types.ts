@@ -4,6 +4,6 @@ export default interface Category {
   id: string
   name: string
   displayName: string
-  imgUrl: string
-  product: Product[]
+  imageUrl: string
+  products: Product[]
 }
