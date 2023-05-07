@@ -1,11 +1,9 @@
 import {Poppins, Gloock} from 'next/font/google'
 import Header from './components/Header'
 import Footer from './components/Footer'
-// import CategoryContextProvider from './contexts/category.context'
 
 // Styles
 import './globals.css'
-import CategoryContextProvider from './contexts/category.contexts'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -30,10 +28,7 @@ export default function RootLayout({
     <html lang="en" className={`${poppins.variable} ${gloock.variable}`}>
       <body className='bg-white'>
         <Header />
-        <CategoryContextProvider>
-  {children}
-        </CategoryContextProvider>
-      
+          {children}
         <Footer />
       </body>
     </html>
