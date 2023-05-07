@@ -1,16 +1,10 @@
-'use client'
-import { useContext } from 'react'
 import CategoryCard from '../components/CategoryCard'
 import { SectionSubtitle, SectionTitle } from '../components/SpecialText'
-import Category from '../types/Category.types'
-import { CategoryContext } from '../contexts/category.contexts'
+import { useCategoryStore } from '../store/category'
 
-interface CategoriesSectionProps{
-  categories:Category[]
-}
-export default function Categories({categories}:CategoriesSectionProps) {
-  const {setCategoriesData} = useContext(CategoryContext)
-  setCategoriesData(categories)
+export default function Categories() {
+  const {categories} = useCategoryStore.getState().state
+
   return (
     <section className="my-10 mt-16 px-12">
       <SectionTitle title="Categorias" />
