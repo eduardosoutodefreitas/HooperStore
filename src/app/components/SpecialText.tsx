@@ -1,9 +1,9 @@
 interface SectionTitleProps {
-    title: string
+    title: string | undefined 
     className?: string
   }
   interface SectionSubtitleProps {
-    subtitle: string
+    subtitle: string | undefined
     className?: string
   }
   export function SectionTitle({ title, className }: SectionTitleProps) {
