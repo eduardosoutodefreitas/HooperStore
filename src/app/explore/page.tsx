@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { useCategoryStore } from "../store/category"
 import ProductCard from "../components/ProductCard"
 import { SectionTitle } from "../components/SpecialText"
+import Cart from "../components/Cart"
 export default function Explore() {
   const { state, actions } = useCategoryStore.getState();
   const [loading, setLoading] = useState(false);
@@ -21,7 +22,7 @@ export default function Explore() {
   }, []);
 
   return (
-    <main className=" px-12 py-6">
+    <main className="px-12 py-6 relative">
       {loading ? (
         <p>Carregando...</p>
       ) : state.categories.length > 0 ? (
@@ -40,6 +41,7 @@ export default function Explore() {
       ) : (
         <p>Não foi possível carregar as categorias.</p>
       )}
+      <Cart/>
     </main>
   );
 }

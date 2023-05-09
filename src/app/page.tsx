@@ -1,3 +1,4 @@
+import Cart from "./components/Cart";
 import Banner from "./sections/Banner";
 import Categories from "./sections/Categories";
 import Services from "./sections/Services";
@@ -10,10 +11,11 @@ export default async function Home() {
     categories: data ?? []
   }})
   return (
-    <main className=" py-7">
+    <main className="py-7">
       <Banner />
       <Services />
       <Categories/>
+      <Cart/>
       
     </main>
   )

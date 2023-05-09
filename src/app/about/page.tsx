@@ -2,6 +2,7 @@ import { SectionTitle } from '../components/SpecialText'
 import { FiGithub, FiLinkedin } from 'react-icons/fi'
 import Image from 'next/image'
 import About from '../../assets/images/About.jpg'
+import Cart from '../components/Cart'
 
 export default function AboutPage() {
   return (
@@ -41,6 +42,7 @@ export default function AboutPage() {
 
         <Image src={About} height={250} width={500} alt="About Image" />
       </section>
+      <Cart/>
     </>
   )
 }

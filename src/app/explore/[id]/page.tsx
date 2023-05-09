@@ -3,6 +3,7 @@ import {useEffect} from 'react'
 import { SectionTitle } from "@/app/components/SpecialText";
 import { useCategoryStore } from "@/app/store/category";
 import ProductCard from '@/app/components/ProductCard';
+import Cart from '@/app/components/Cart';
 
 interface CategoryPageProps{
      params: { id: string } 
@@ -22,6 +23,7 @@ export default async function Page({params}:CategoryPageProps) {
           {category?.products.map(product=>(<ProductCard product={product} key={product.id}/>)
         )}
           </div>
+          <Cart/>
      </main>
     )
   }

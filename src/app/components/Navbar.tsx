@@ -1,7 +1,13 @@
+'use client'
 import { HiOutlineShoppingCart } from 'react-icons/hi'
 import Link from 'next/link'
+import { useCartStore } from '../store/cart'
 
 export default function Navbar() {
+  const {toggleCart, showCart} = useCartStore()
+    const handleCartClick = () => {
+      toggleCart(showCart)
+    }
   return (
     <nav className="px-9 select-none pb-5 border-b border-primary/10 flex justify-between">
         <Link  href="/explore">
@@ -13,10 +19,8 @@ export default function Navbar() {
         <Link href="/contact">
          Contato
         </Link>
-        <button className="flex items-center gap-x-1 cursor-pointer">
-          <HiOutlineShoppingCart size={22} />
-          <span>1</span>
-        </button>
+       <HiOutlineShoppingCart size={22} onClick={handleCartClick}/> 
+
     </nav>
   )
 }
