@@ -1,21 +1,50 @@
-import {Poppins, Gloock} from 'next/font/google'
+import localFont from 'next/font/local'
 import Header from './components/Header'
-import Footer from './components/Footer'
 
+// TODO: Fazer pagina de contato
+// TODO: Fazer pagina de Checkout
+// TODO: Fazer pagina de Sucesso
 // Styles
 import './globals.css'
 
-const poppins = Poppins({
-  subsets: ['latin'],
+const poppins = localFont({
+  src: [
+    {
+      path: '../../public/fonts/Poppins/Poppins-ExtraLight.ttf',
+      weight: '200'
+    },
+    {
+      path: '../../public/fonts/Poppins/Poppins-Light.ttf',
+      weight: '300'
+    },
+    {
+      path: '../../public/fonts/Poppins/Poppins-Regular.ttf',
+      weight: '400'
+    },
+    {
+      path: '../../public/fonts/Poppins/Poppins-Medium.ttf',
+      weight: '500'
+    },
+    {
+      path: '../../public/fonts/Poppins/Poppins-SemiBold.ttf',
+      weight: '600'
+    },
+    {
+      path: '../../public/fonts/Poppins/Poppins-ExtraBold.ttf',
+      weight: '800'
+    },
+    {
+      path: '../../public/fonts/Poppins/Poppins-Black.ttf',
+      weight: '900'
+    }
+  ],
   display: 'swap',
-  weight: ['100', '300', '400', '600', '700', '900'],
   variable: '--font-poppins'
 })
 
-const gloock = Gloock({
-  subsets: ['latin'],
+const gloock = localFont({
+  src: '../../public/fonts/Gloock/Gloock-Regular.ttf',
   display: 'swap',
-  weight: ['400'],
   variable: '--font-gloock'
 })
 
@@ -26,10 +55,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${poppins.variable} ${gloock.variable}`}>
-      <body className='bg-white'>
+      <body className="bg-white font-sans relative">
         <Header />
-          {children}
-        <Footer />
+        {children}
       </body>
     </html>
   )
