@@ -7,7 +7,9 @@ interface CategoryCardProps {
 }
 export default function CategoryCard({ category }: CategoryCardProps) {
   return (
-    <Link href={`/explore/${category.id}`} className="h-[330px] w-3/6 hover:w-3/4 mt-5 transition-all duration-300 relative cursor-pointer  ">
+    <Link
+      href={`/explore/${category.id}`}
+      className="h-[330px] min-w-[200px] flex-1 relative cursor-pointer  ">
       <Image
         src={category.imageUrl}
         fill

@@ -3,13 +3,13 @@ import { SectionSubtitle, SectionTitle } from '../components/SpecialText'
 import { useCategoryStore } from '../store/category'
 
 export default function Categories() {
-  const {categories} = useCategoryStore.getState().state
+  const { categories } = useCategoryStore.getState().state
 
   return (
-    <section className="my-10 mt-16 px-12">
+    <section className="my-16 px-12">
       <SectionTitle title="Categorias" />
       <SectionSubtitle subtitle="Explore nossos produtos por categoria" />
-      <div className="flex justify-center items-center gap-x-2 px-4">
+      <div className="flex justify-center items-center gap-2 flex-wrap my-9">
         {categories.map((category) => (
           <CategoryCard category={category} key={category.id} />
         ))}
