@@ -1,8 +1,3 @@
-// TODO: Adicionar links
-// TODO: Adicionar responsividade
-// TODO: Deixar mais bonito
-import Image from 'next/image'
-import Logo from '../../assets/images/Logo.svg'
 import Link from 'next/link'
 import { FaGithubAlt, FaLinkedin } from 'react-icons/fa'
 import { HiPhone, HiLocationMarker } from 'react-icons/hi'
