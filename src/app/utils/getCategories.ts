@@ -1,9 +1,9 @@
-
+import { cache } from 'react'
 import { collection, getDocs } from 'firebase/firestore'
 import Category from '../types/Category.types'
 
 import { db } from '@/config/firebase.config'
-async function getCategories() {
+const getCategories = cache(async () => {
   const categoriesFromFirestore: Category[] = []
   try {
     const q = collection(db, 'categories')
@@ -17,6 +17,6 @@ async function getCategories() {
   }
 
   return categoriesFromFirestore
-}
+})
 
 export default getCategories
