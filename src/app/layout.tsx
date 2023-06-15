@@ -1,11 +1,9 @@
 import localFont from 'next/font/local'
 import Header from './components/Header'
 
-// TODO: Fazer pagina de contato
-// TODO: Fazer pagina de Checkout
-// TODO: Fazer pagina de Sucesso
 // Styles
 import './globals.css'
+import Footer from './components/Footer'
 
 const poppins = localFont({
   src: [
@@ -58,6 +56,7 @@ export default function RootLayout({
       <body className="bg-white font-sans relative">
         <Header />
         {children}
+        <Footer/>
       </body>
     </html>
   )
