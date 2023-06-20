@@ -4,11 +4,18 @@ import Logo from '../../assets/images/Logo.svg'
 import Link from 'next/link'
 import { useCartStore } from '../store/cart'
 import { HiOutlineShoppingCart } from 'react-icons/hi'
+import { CgMenuRightAlt, CgClose } from 'react-icons/cg'
+import { AiFillInstagram, AiFillLinkedin, AiFillGithub } from 'react-icons/ai'
+import useNav from '../utils/useNav'
 
 export default function Header() {
   const { toggleCart, showCart } = useCartStore()
+  const { isVisible, setIsVisible } = useNav()
   const handleCartClick = () => {
     toggleCart(showCart)
+  }
+  const handleNavClick = () => {
+    setIsVisible(!isVisible)
   }
   return (
     <header className="text-primary shadow-md px-12 sticky top-0 z-30 bg-white ">
@@ -17,14 +24,14 @@ export default function Header() {
           <Link href="/">
             <Image
               src={Logo}
-              width={120}
-              height={120}
+              width={100}
+              height={100}
               alt="logo"
               className="cursor-pointer"
             />
           </Link>
         </div>
-        <nav className="flex w-1/3 items-center justify-between text-lg">
+        <nav className="flex w-1/3 items-center justify-between text-lg min-w-[425px] tablet:hidden">
           <Link href="/">Home</Link>
           <Link href="/explore">Explorar</Link>
           <Link href="/about">Sobre nós</Link>
@@ -34,6 +41,44 @@ export default function Header() {
             onClick={handleCartClick}
             className="cursor-pointer"
           />
+        </nav>
+        <div className="hidden tablet:inline-block">
+          <CgMenuRightAlt size={35} onClick={handleNavClick} />
+        </div>
+      </div>
+      <div
+        className={`fixed top-0 p-10 ease-in duration-500 h-screen w-[50vw] bg-white text-center
+      ${isVisible ? 'left-0' : 'left-[-100%]'}`}>
+        <div className="w-full flex justify-end mb-5">
+          <CgClose onClick={handleNavClick} size={25} />
+        </div>
+        <nav className="flex flex-col items-center gap-8 text-lg">
+          <Link onClick={() => handleNavClick()} href="/">
+            Home
+          </Link>
+          <Link onClick={() => handleNavClick()} href="/explore">
+            Explorar
+          </Link>
+          <Link onClick={() => handleNavClick()} href="/about">
+            Sobre nós
+          </Link>
+          <Link onClick={() => handleNavClick()} href="/contact">
+            Contato
+          </Link>
+          <div className="w-full flex items-center justify-around">
+            <AiFillGithub size={25} />
+            <AiFillInstagram size={25} />
+            <AiFillLinkedin size={25} />
+          </div>
+          <Link href="/" onClick={() => handleNavClick()}>
+            <Image
+              src={Logo}
+              width={80}
+              height={82}
+              alt="logo"
+              className="cursor-pointer"
+            />
+          </Link>
         </nav>
       </div>
     </header>
