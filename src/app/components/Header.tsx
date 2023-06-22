@@ -11,14 +11,17 @@ import useNav from '../utils/useNav'
 export default function Header() {
   const { toggleCart, showCart } = useCartStore()
   const { isVisible, setIsVisible } = useNav()
-  const handleCartClick = () => {
-    toggleCart(showCart)
-  }
   const handleNavClick = () => {
     setIsVisible(!isVisible)
   }
+  const handleCartClick = () => {
+    if (isVisible) {
+      handleNavClick()
+    }
+    toggleCart(showCart)
+  }
   return (
-    <header className="text-primary shadow-md px-12 sticky top-0 z-30 bg-white ">
+    <header className="text-primary shadow-md px-12 sticky top-0 z-30 bg-white tablet:px-6">
       <div className="flex items-center justify-between pt-2">
         <div>
           <Link href="/">
@@ -42,8 +45,13 @@ export default function Header() {
             className="cursor-pointer"
           />
         </nav>
-        <div className="hidden tablet:inline-block">
+        <div className="hidden tablet:flex tablet:items-center tablet:gap-2">
           <CgMenuRightAlt size={35} onClick={handleNavClick} />
+          <HiOutlineShoppingCart
+            size={30}
+            onClick={handleCartClick}
+            className="cursor-pointer"
+          />
         </div>
       </div>
       <div
