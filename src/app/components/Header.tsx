@@ -9,7 +9,7 @@ import { AiFillInstagram, AiFillLinkedin, AiFillGithub } from 'react-icons/ai'
 import useNav from '../utils/useNav'
 
 export default function Header() {
-  const { toggleCart, showCart } = useCartStore()
+  const { toggleCart, showCart, cartQuantity } = useCartStore()
   const { isVisible, setIsVisible } = useNav()
   const handleNavClick = () => {
     setIsVisible(!isVisible)
@@ -39,11 +39,14 @@ export default function Header() {
           <Link href="/explore">Explorar</Link>
           <Link href="/about">Sobre nós</Link>
           <Link href="/contact">Contato</Link>
-          <HiOutlineShoppingCart
-            size={22}
-            onClick={handleCartClick}
-            className="cursor-pointer"
-          />
+          <div className="flex items-center gap-1 font-medium">
+            <HiOutlineShoppingCart
+              size={22}
+              onClick={handleCartClick}
+              className="cursor-pointer"
+            />
+            <span>{cartQuantity}</span>
+          </div>
         </nav>
         <div className="hidden tablet:flex tablet:items-center tablet:gap-2">
           <CgMenuRightAlt size={35} onClick={handleNavClick} />

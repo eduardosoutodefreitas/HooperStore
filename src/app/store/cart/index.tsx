@@ -5,18 +5,29 @@ import { create } from 'zustand'
 export interface StoreProps {
   showCart: boolean
   cartTotal: number
+  cartQuantity: number
   cart: CartProduct[]
   addToCart: (product: Product) => void
   removeFromCart: (productId: string) => void
   increaseQuantity: (productId: string) => void
   decreaseQuantity: (productId: string) => void
+  updateCartQuantity: () => void
   toggleCart: (visible: boolean) => void
 }
 
 export const useCartStore = create<StoreProps>((set, get) => ({
   cart: [],
   cartTotal: 0,
+  cartQuantity: 0,
   showCart: false,
+  updateCartQuantity: () => {
+    const cart = get().cart
+    const cartQuantity = cart.reduce(
+      (total, product) => total + product.quantity,
+      0
+    )
+    set({ cartQuantity })
+  },
   addToCart: (product) => {
     const cart = get().cart
     const findProduct = cart.find((p) => p.id === product.id)
@@ -27,6 +38,7 @@ export const useCartStore = create<StoreProps>((set, get) => ({
     }
     const cartTotal = get().cartTotal + product.price
     set({ cart, cartTotal })
+    get().updateCartQuantity()
   },
   removeFromCart: (productId) => {
     const cart = get().cart.filter((product) => product.id !== productId)
@@ -35,6 +47,7 @@ export const useCartStore = create<StoreProps>((set, get) => ({
       0
     )
     set({ cart, cartTotal })
+    get().updateCartQuantity()
   },
   increaseQuantity: (productId) => {
     const cart = get().cart
@@ -44,6 +57,7 @@ export const useCartStore = create<StoreProps>((set, get) => ({
     }
     const cartTotal = get().cartTotal + findProduct!.price
     set({ cart, cartTotal })
+    get().updateCartQuantity()
   },
   decreaseQuantity: (productId) => {
     const cart = get().cart
@@ -62,6 +76,7 @@ export const useCartStore = create<StoreProps>((set, get) => ({
 
       const cartTotal = get().cartTotal - findProduct.price
       set({ cart, cartTotal })
+      get().updateCartQuantity()
     }
   },
   toggleCart: (visible) => {
