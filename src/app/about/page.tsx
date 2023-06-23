@@ -10,7 +10,7 @@ export default function AboutPage() {
           title="Bem-vindo à Hooper Store!"
           className="rounded-sm"
         />
-        <p className="w-1/3 min-w-[250px] smartphone:w-full">
+        <p className="w-1/3 min-w-[225px] smartphone:w-full">
           A Hooper Store é uma loja fictícia feita por{' '}
           <a
             className="font-bold"
@@ -22,12 +22,12 @@ export default function AboutPage() {
           projeto que pudesse mostrar meus conhecimentos enquanto resolveria um
           problema.
         </p>
-        <p className="w-1/3 min-w-[200px] smartphone:w-full">
+        <p className="w-1/3 min-w-[225px] smartphone:w-full">
           Nesta loja os produtos possuem definitivamente o melhor preço do
           mercado, de modo que qualquer atleta em qualquer parte do mundo pode
           adquirir produtos de qualidade.{' '}
         </p>
-        <div className="flex items-center min-w-[200px] w-1/4 justify-between">
+        <div className="flex items-center min-w-[225px] w-1/4 justify-between">
           <a href="https://instagram.com/freitas.dev" target="_blank">
             <AiFillInstagram
               size={35}

@@ -7,12 +7,12 @@ const ContactPage = () => {
     <>
       <div className="min-h-[85vh] p-12 flex flex-col  justify-center items-center gap-8">
         <SectionTitle title="Entre em contato!" />
-        <p className="w-1/3 smartphone:w-full min-w-[200px]">
+        <p className="w-1/3 smartphone:w-full min-w-[225px]">
           Gostou do projeto? Tem alguma sugestão ou crítica em mente? Sinta-se a
           vontade para falar comigo através de uma de minhas redes sociais!
           Responderei assim que possível.
         </p>
-        <div className="flex items-center mt-5 w-1/4 min-w-[200px] justify-between">
+        <div className="flex items-center mt-5 w-1/4 min-w-[225px] justify-between">
           <a href="https://instagram.com/freitas.dev" target="_blank">
             <AiFillInstagram
               size={35}
