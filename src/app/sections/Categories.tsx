@@ -6,7 +6,7 @@ export default function Categories() {
   const { categories } = useCategoryStore.getState().state
 
   return (
-    <section className="my-16 px-12">
+    <section className="my-16 px-12 smartphone:px-6">
       <SectionTitle title="Categorias" />
       <SectionSubtitle subtitle="Explore nossos produtos por categoria" />
       <div className="flex justify-center items-center gap-2 flex-wrap my-9">
