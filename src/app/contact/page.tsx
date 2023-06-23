@@ -7,7 +7,7 @@ const ContactPage = () => {
     <>
       <div className="min-h-[85vh] p-12 flex flex-col  justify-center items-center gap-8">
         <SectionTitle title="Entre em contato!" />
-        <p>
+        <p className="w-1/3 smartphone:w-full min-w-[200px]">
           Gostou do projeto? Tem alguma sugestão ou crítica em mente? Sinta-se a
           vontade para falar comigo através de uma de minhas redes sociais!
           Responderei assim que possível.

@@ -4,7 +4,6 @@ import { useCategoryStore } from '../store/category'
 import { AiFillInstagram, AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 
 export default function Footer() {
-  const { categories } = useCategoryStore.getState().state
   return (
     <footer className="bg-primary text-white p-12 text-center">
       <div className="flex justify-around items-start border-b border-b-white flex-wrap pb-12 smartphone:gap-8">
@@ -13,13 +12,6 @@ export default function Footer() {
           <Link href="/explore">Explorar</Link>
           <Link href="/about">Sobre nós</Link>
           <Link href="/contact">Contato</Link>
-        </div>
-        <div className="flex flex-col-reverse gap-1 text-lg">
-          {categories.map((category) => (
-            <Link key={category.id} href={`/explore/${category.id}`}>
-              {category.displayName}
-            </Link>
-          ))}
         </div>
         <div className="flex flex-col items-start">
           <p>
@@ -54,7 +46,7 @@ export default function Footer() {
         <p className="py-3 text-center">
           Feito por{' '}
           <a
-            href="https://github.com/Hey-Edu"
+            href="https://github.com/eduardosoutodefreitas"
             target="_blank"
             className="font-semibold">
             Eduardo Souto
