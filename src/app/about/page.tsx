@@ -5,7 +5,7 @@ import Cart from '../components/Cart'
 export default function AboutPage() {
   return (
     <>
-      <section className="min-h-[85vh] p-12 flex flex-col justify-center items-center gap-5">
+      <div className="min-h-[85vh] p-12 flex flex-col justify-center items-center gap-5">
         <SectionTitle
           title="Bem-vindo à Hooper Store!"
           className="rounded-sm"
@@ -52,7 +52,7 @@ export default function AboutPage() {
             />
           </a>
         </div>
-      </section>
+      </div>
       <Cart />
     </>
   )

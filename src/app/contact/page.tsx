@@ -5,7 +5,7 @@ import { SectionTitle } from '../components/SpecialText'
 const ContactPage = () => {
   return (
     <>
-      <section className="min-h-[85vh] p-12 flex flex-col  justify-center items-center gap-8">
+      <div className="min-h-[85vh] p-12 flex flex-col  justify-center items-center gap-8">
         <SectionTitle title="Entre em contato!" />
         <p>
           Gostou do projeto? Tem alguma sugestão ou crítica em mente? Sinta-se a
@@ -37,7 +37,7 @@ const ContactPage = () => {
             />
           </a>
         </div>
-      </section>
+      </div>
       <Cart />
     </>
   )

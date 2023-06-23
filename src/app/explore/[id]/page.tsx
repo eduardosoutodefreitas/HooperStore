@@ -12,14 +12,14 @@ export default async function Page({ params }: CategoryPageProps) {
   const category = await filterCategoryById(categories, params.id)
 
   return (
-    <main className="px-12 py-6">
+    <div className="p-12 smartphone:px-6">
       <SectionTitle title={category?.displayName} />
-      <div className="flex flex-wrap items-center gap-5 mt-6 mb-16 pl-2">
+      <div className="flex flex-wrap items-center justify-center gap-5 mt-6 mb-16 pl-2">
         {category?.products.map((product) => (
           <ProductCard product={product} key={product.id} />
         ))}
       </div>
       <Cart />
-    </main>
+    </div>
   )
 }

@@ -1,22 +1,26 @@
-import Cart from "./components/Cart";
-import Banner from "./sections/Banner";
-import Categories from "./sections/Categories";
-import Services from "./sections/Services";
-import { useCategoryStore } from "./store/category";
-import getCategories from "./utils/getCategories";
+import Cart from './components/Cart'
+import Banner from './sections/Banner'
+import Categories from './sections/Categories'
+import LatestProducts from './sections/LatestProducts'
+import Services from './sections/Services'
+import { useCategoryStore } from './store/category'
+import getCategories from './utils/getCategories'
 
 export default async function Home() {
   const data = await getCategories()
-  useCategoryStore.setState({state:{
-    categories: data ?? []
-  }})
+  useCategoryStore.setState({
+    state: {
+      loading: false,
+      categories: data ?? []
+    }
+  })
   return (
-    <main className="py-7">
+    <main>
       <Banner />
+      <Categories />
       <Services />
-      <Categories/>
-      <Cart/>
-      
+      <LatestProducts />
+      <Cart />
     </main>
   )
 }
