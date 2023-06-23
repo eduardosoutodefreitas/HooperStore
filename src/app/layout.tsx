@@ -56,7 +56,7 @@ export default function RootLayout({
       <body className="bg-white font-sans relative">
         <Header />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   )
