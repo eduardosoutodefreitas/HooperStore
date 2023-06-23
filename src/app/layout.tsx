@@ -52,10 +52,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="en"
-      title="Hooper-Store"
-      className={`${poppins.variable} ${gloock.variable}`}>
+    <html lang="en" className={`${poppins.variable} ${gloock.variable}`}>
+      <title>Hooper Store</title>
       <body className="bg-white font-sans relative">
         <Header />
         {children}

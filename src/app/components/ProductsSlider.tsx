@@ -46,8 +46,8 @@ const ProductsSlider = ({ slideProducts }: ProductsSliderProps) => {
       spaceBetween={20}
       className="mySwiper">
       {slideProducts.map((product) => (
-        <SwiperSlide>
-          <ProductCard product={product} key={product.id} />
+        <SwiperSlide key={product.id}>
+          <ProductCard product={product} />
         </SwiperSlide>
       ))}
     </Swiper>
