@@ -55,7 +55,7 @@ export default function Header() {
         </div>
       </div>
       <div
-        className={`fixed top-0 p-10 ease-in duration-500 h-screen w-[50vw] bg-white text-center
+        className={`fixed top-0 p-6 ease-in duration-500 h-screen w-[50vw] bg-white text-center
       ${isVisible ? 'left-0' : 'left-[-100%]'}`}>
         <div className="w-full flex justify-end mb-5">
           <CgClose onClick={handleNavClick} size={25} />
@@ -74,9 +74,17 @@ export default function Header() {
             Contato
           </Link>
           <div className="w-full flex items-center justify-around">
-            <AiFillGithub size={25} />
-            <AiFillInstagram size={25} />
-            <AiFillLinkedin size={25} />
+            <a href="https://instagram.com/freitas.dev" target="_blank">
+              <AiFillInstagram size={25} className="cursor-pointer" />
+            </a>
+            <a href="https://github.com/eduardosoutodefreitas" target="_blank">
+              <AiFillGithub size={25} className="cursor-pointer" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/eduardo-souto-72493b26b/"
+              target="_blank">
+              <AiFillLinkedin size={25} className="cursor-pointer" />
+            </a>
           </div>
           <Link href="/" onClick={() => handleNavClick()}>
             <Image

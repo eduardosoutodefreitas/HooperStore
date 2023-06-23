@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import { FaGithubAlt, FaLinkedin } from 'react-icons/fa'
 import { HiPhone, HiLocationMarker } from 'react-icons/hi'
 import { useCategoryStore } from '../store/category'
+import { AiFillInstagram, AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 
 export default function Footer() {
   const { categories } = useCategoryStore.getState().state
@@ -39,8 +39,17 @@ export default function Footer() {
       </div>
       <div className="pt-12">
         <div className="flex justify-center items-center gap-5">
-          <FaGithubAlt color="white" size={24} />
-          <FaLinkedin color="white" size={24} />
+          <a href="https://instagram.com/freitas.dev" target="_blank">
+            <AiFillInstagram size={25} className="cursor-pointer" />
+          </a>
+          <a href="https://github.com/eduardosoutodefreitas" target="_blank">
+            <AiFillGithub size={25} className="cursor-pointer" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/eduardo-souto-72493b26b/"
+            target="_blank">
+            <AiFillLinkedin size={25} className="cursor-pointer" />
+          </a>
         </div>
         <p className="py-3 text-center">
           Feito por{' '}
