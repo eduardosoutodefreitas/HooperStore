@@ -17,7 +17,7 @@ const CheckoutButton = ({ cart, children }: CheckoutButtonProps) => {
   }
   return (
     <button
-      className="w-full bg-primary text-white px-2 py-1 rounded-md"
+      className="w-full self-center bg-primary text-white px-2 py-1 rounded-md"
       onClick={handleCheckoutClick}>
       {children}
     </button>
