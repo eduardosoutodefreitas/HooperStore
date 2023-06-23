@@ -55,6 +55,7 @@ export default function Header() {
             onClick={handleCartClick}
             className="cursor-pointer"
           />
+          <span className="font-medium text-2xl">{cartQuantity}</span>
         </div>
       </div>
       <div
