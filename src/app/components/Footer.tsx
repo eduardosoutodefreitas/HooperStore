@@ -5,8 +5,8 @@ import { AiFillInstagram, AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-white p-12 text-center">
-      <div className="flex justify-around items-start border-b border-b-white flex-wrap pb-12 smartphone:gap-8">
+    <footer className="bg-primary text-white p-12 text-center smartphone:p-6">
+      <div className="flex justify-around items-start border-b border-b-white flex-wrap pb-12 smartphone:pb-6 smartphone:gap-8">
         <div className="flex flex-col gap-1 text-lg">
           <h2 className="font-special font-bold text-4xl">Hooper Store</h2>
           <Link href="/explore">Explorar</Link>
@@ -25,11 +25,11 @@ export default function Footer() {
               color="white"
               className="mr-2 inline-block"
             />{' '}
-            Rua Fictícia, Av.Imaginada
+            Av.Fictícia
           </p>
         </div>
       </div>
-      <div className="pt-12">
+      <div className="pt-12 smartphone:pt-6">
         <div className="flex justify-center items-center gap-5">
           <a href="https://instagram.com/freitas.dev" target="_blank">
             <AiFillInstagram size={25} className="cursor-pointer" />
