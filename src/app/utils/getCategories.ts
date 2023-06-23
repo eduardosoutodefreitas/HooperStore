@@ -11,7 +11,6 @@ const getCategories = cache(async () => {
     querySnapshot.forEach((doc: { data: () => any }) => {
       categoriesFromFirestore.push(doc.data() as any)
     })
-    console.log('deu bom')
   } catch (error) {
     console.log(error)
   }
