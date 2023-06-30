@@ -49,7 +49,11 @@ export default function Header() {
           </div>
         </nav>
         <div className="hidden tablet:flex tablet:items-center tablet:gap-2">
-          <CgMenuRightAlt size={35} onClick={handleNavClick} />
+          <CgMenuRightAlt
+            size={35}
+            onClick={handleNavClick}
+            className="cursor-pointer"
+          />
           <HiOutlineShoppingCart
             size={30}
             onClick={handleCartClick}
