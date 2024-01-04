@@ -21,7 +21,8 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'images.pexels.com'
       }
-    ]
+    ],
+    unoptimized: true
   }
 }
 
